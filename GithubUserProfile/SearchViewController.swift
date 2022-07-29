@@ -10,6 +10,9 @@ import Combine
 import Kingfisher
 
 class UserProfileViewController: UIViewController {
+        
+    @Published private(set) var user: UserProfile?
+    var subscription = Set<AnyCancellable>()
     
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,5 +22,27 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+        bind()
     }
+    
+    private func setupUI() {
+        thumbnail.layer.cornerRadius = 80
+    }
+    
+    
+    private func bind() {
+        $user
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] result in
+                self.update(result)
+            }.store(in: &subscription)
+    }
+
+    private func update(_ user: UserProfile?) {
+        
+    }
+    
 }
+

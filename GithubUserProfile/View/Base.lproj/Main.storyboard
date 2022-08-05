@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HS8-fG-fiR">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,36 +13,36 @@
             <objects>
                 <viewController storyboardIdentifier="UserProfileViewController" id="BYZ-38-t0r" customClass="UserProfileViewController" customModule="GithubUserProfile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hn7-fd-nSK">
-                                <rect key="frame" x="127" y="168" width="160" height="160"/>
+                                <rect key="frame" x="115" y="168" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="HlT-MK-9gp"/>
                                     <constraint firstAttribute="width" constant="160" id="NWK-2h-Qly"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fl7-26-rtZ">
-                                <rect key="frame" x="40" y="378" width="65.5" height="29"/>
+                                <rect key="frame" x="40.000000000000007" y="378" width="65.666666666666686" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpU-es-AOe">
-                                <rect key="frame" x="40" y="415" width="73.5" height="21.5"/>
+                                <rect key="frame" x="40.000000000000007" y="415" width="73.666666666666686" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers: 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBH-Ei-ath">
-                                <rect key="frame" x="40" y="476.5" width="104" height="22"/>
+                                <rect key="frame" x="40" y="476.66666666666669" width="104" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="following: 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBP-cf-Pxe">
-                                <rect key="frame" x="40" y="506.5" width="104" height="22"/>
+                                <rect key="frame" x="40" y="506.66666666666674" width="104" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,11 +55,15 @@
                             <constraint firstItem="IBP-cf-Pxe" firstAttribute="top" secondItem="EBH-Ei-ath" secondAttribute="bottom" constant="8" symbolic="YES" id="55X-tT-AT0"/>
                             <constraint firstItem="EBH-Ei-ath" firstAttribute="top" secondItem="rpU-es-AOe" secondAttribute="bottom" constant="40" id="6Ys-v1-onv"/>
                             <constraint firstItem="rpU-es-AOe" firstAttribute="leading" secondItem="Fl7-26-rtZ" secondAttribute="leading" id="Oxh-n2-crW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rpU-es-AOe" secondAttribute="trailing" symbolic="YES" id="Wei-VQ-uvG"/>
                             <constraint firstItem="Hn7-fd-nSK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Wpt-yc-3os"/>
                             <constraint firstItem="EBH-Ei-ath" firstAttribute="leading" secondItem="rpU-es-AOe" secondAttribute="leading" id="aU0-Ib-Gng"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IBP-cf-Pxe" secondAttribute="trailing" symbolic="YES" id="hdt-ja-jlt"/>
                             <constraint firstItem="IBP-cf-Pxe" firstAttribute="leading" secondItem="EBH-Ei-ath" secondAttribute="leading" id="lcW-rJ-PIq"/>
                             <constraint firstItem="rpU-es-AOe" firstAttribute="top" secondItem="Fl7-26-rtZ" secondAttribute="bottom" constant="8" symbolic="YES" id="lcc-Ad-fKJ"/>
                             <constraint firstItem="Hn7-fd-nSK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mUa-dd-tcg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EBH-Ei-ath" secondAttribute="trailing" symbolic="YES" id="wym-d6-jsU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fl7-26-rtZ" secondAttribute="trailing" symbolic="YES" id="zBs-9f-1ml"/>
                             <constraint firstItem="Fl7-26-rtZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zhG-JQ-3Bj"/>
                         </constraints>
                     </view>
@@ -74,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="131"/>
+            <point key="canvasLocation" x="1044.6153846153845" y="130.80568720379145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XMq-tZ-GAP">
@@ -82,7 +86,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HS8-fG-fiR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bxa-DT-Gbj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

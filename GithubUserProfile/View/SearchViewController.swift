@@ -11,9 +11,7 @@ import Kingfisher
 
 class UserProfileViewController: UIViewController {
     
-    let network = NetworkService(configuration: .default)
-    
-    @Published private(set) var user: UserProfile?
+    var viewModel: SearchViewModel!
     var subscription = Set<AnyCancellable>()
     
     @IBOutlet weak var thumbnail: UIImageView!
@@ -24,6 +22,10 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = SearchViewModel(
+            network: NetworkService(configuration: .default),
+            selectedUser: nil)
         
         setupUI()
         embedSearchControl()
@@ -47,30 +49,17 @@ class UserProfileViewController: UIViewController {
     }
     
     private func bind() {
-        $user
+        viewModel.selectedUser
             .receive(on: RunLoop.main)
-            .sink { [unowned self] result in
-                self.update(result)
+            .sink { [unowned self] _ in
+                self.nameLabel.text = viewModel.name
+                self.loginLabel.text = viewModel.login
+                self.followerLabel.text = viewModel.followers
+                self.followingLabel.text = viewModel.following
+                self.thumbnail.kf.setImage(with: self.viewModel.imageURL)
             }.store(in: &subscription)
     }
 
-    private func update(_ user: UserProfile?) {
-        
-        guard let user = user else {
-            self.nameLabel.text = "n/a"
-            self.loginLabel.text = "n/a"
-            self.followerLabel.text = ""
-            self.followingLabel.text = ""
-            self.thumbnail.image = nil
-            return
-        }
-        self.nameLabel.text = user.name
-        self.loginLabel.text = user.login
-        self.followerLabel.text = "follower: \(user.followers)"
-        self.followingLabel.text = "following: \(user.following)"
-        self.thumbnail.kf.setImage(with: user.avatarUrl)
-    }
-    
 }
 
 //MARK: - SearchBar Method
@@ -78,35 +67,14 @@ class UserProfileViewController: UIViewController {
 extension UserProfileViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let keyword = searchController.searchBar.text
-        
         print("search: \(keyword)")
     }
 }
 
 extension UserProfileViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("button clicked: \(searchBar.text)")
-        
         guard let keyword = searchBar.text, !keyword.isEmpty else { return }
-        
-//        Resource
-        let resource = Resource<UserProfile>(
-            base: "https://api.github.com/",
-            path: "users/\(keyword)",
-            params: [:],
-            header: ["Content-Type":"application/json"])
-        
-//        NetworkService
-        network.load(resource)
-            .receive(on: RunLoop.main)
-            .sink{ completion in
-                switch completion {
-                case .failure(let error):
-                    self.user = nil
-                case .finished: break
-                }
-            } receiveValue: { user in
-                self.user = user
-            }.store(in: &subscription)
+        viewModel.search(keyword: keyword)
+
     }
 }

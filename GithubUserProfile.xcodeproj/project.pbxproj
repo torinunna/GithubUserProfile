@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F00E45A289D12EB008A6B60 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F00E459289D12EB008A6B60 /* SearchViewModel.swift */; };
 		941BDB172842567A00DF0BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941BDB162842567A00DF0BFC /* AppDelegate.swift */; };
 		941BDB192842567A00DF0BFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941BDB182842567A00DF0BFC /* SceneDelegate.swift */; };
 		941BDB1E2842567A00DF0BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941BDB1C2842567A00DF0BFC /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F00E459289D12EB008A6B60 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		941BDB132842567A00DF0BFC /* GithubUserProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUserProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		941BDB162842567A00DF0BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		941BDB182842567A00DF0BFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F00E458289D12A8008A6B60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				941BDB1C2842567A00DF0BFC /* Main.storyboard */,
+				941BDB4E2842570D00DF0BFC /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		941BDB0A2842567A00DF0BFC = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +122,10 @@
 			children = (
 				941BDB162842567A00DF0BFC /* AppDelegate.swift */,
 				941BDB182842567A00DF0BFC /* SceneDelegate.swift */,
+				5F00E459289D12EB008A6B60 /* SearchViewModel.swift */,
 				941BDB4B284256B900DF0BFC /* Utils */,
 				941BDB46284256AD00DF0BFC /* Network */,
-				941BDB1C2842567A00DF0BFC /* Main.storyboard */,
-				941BDB4E2842570D00DF0BFC /* SearchViewController.swift */,
+				5F00E458289D12A8008A6B60 /* View */,
 				941BDB52284257DC00DF0BFC /* Model */,
 				941BDB1F2842567B00DF0BFC /* Assets.xcassets */,
 				941BDB212842567B00DF0BFC /* LaunchScreen.storyboard */,
@@ -304,6 +315,7 @@
 			files = (
 				941BDB4F2842570D00DF0BFC /* SearchViewController.swift in Sources */,
 				941BDB512842574700DF0BFC /* UserProfile.swift in Sources */,
+				5F00E45A289D12EB008A6B60 /* SearchViewModel.swift in Sources */,
 				941BDB172842567A00DF0BFC /* AppDelegate.swift in Sources */,
 				941BDB49284256AD00DF0BFC /* NetworkService.swift in Sources */,
 				941BDB4A284256AD00DF0BFC /* Resource.swift in Sources */,

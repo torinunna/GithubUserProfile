@@ -50,7 +50,20 @@ class UserProfilewViewController: UIViewController {
     }
 
     private func update(_ user: UserProfile?) {
+        guard let user = user else {
+            self.nameLabel.text = "n/a"
+            self.loginLabel.text = "n/a"
+            self.followerLabel.text = ""
+            self.followingLabel.text = ""
+            self.thumbnail.image = nil
+            return
+        }
         
+        self.nameLabel.text = user.name
+        self.loginLabel.text = user.login
+        self.followerLabel.text = "follower: \(user.followers)"
+        self.followingLabel.text = "following: \(user.following)"
+        self.thumbnail.image = nil
     }
 
 }

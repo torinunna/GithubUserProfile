@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  UserProfilewViewController.swift
 //  GithubUserProfile
 //
 //  Created by YUJIN KWON on 2023/05/31.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class SearchViewController: UIViewController {
+class UserProfilewViewController: UIViewController {
 
     @Published private(set) var user: UserProfile?
     var subscriptions = Set<AnyCancellable>()
@@ -55,14 +55,14 @@ class SearchViewController: UIViewController {
 
 }
 
-extension SearchViewController: UISearchResultsUpdating {
+extension UserProfilewViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let keyword = searchController.searchBar.text
         print("search: \(keyword)")
     }
 }
 
-extension SearchViewController: UISearchBarDelegate {
+extension UserProfilewViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search pressed: \(searchBar.text)")
     }

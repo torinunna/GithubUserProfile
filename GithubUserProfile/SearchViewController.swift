@@ -22,11 +22,23 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        embedSearchControl()
         bind()
     }
 
     private func setupUI() {
         thumbnail.layer.cornerRadius = 80
+    }
+    
+    private func embedSearchControl() {
+        self.navigationItem.title = "Search"
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "torinunna"
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        self.navigationItem.searchController = searchController
     }
     
     private func bind() {
@@ -43,3 +55,15 @@ class SearchViewController: UIViewController {
 
 }
 
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let keyword = searchController.searchBar.text
+        print("search: \(keyword)")
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search pressed: \(searchBar.text)")
+    }
+}

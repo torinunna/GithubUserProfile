@@ -17,6 +17,11 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+
+    private func setupUI() {
+        thumbnail.layer.cornerRadius = 80
     }
 
 

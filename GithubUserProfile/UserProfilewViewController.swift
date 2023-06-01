@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Kingfisher
 
 class UserProfilewViewController: UIViewController {
 
@@ -63,7 +64,7 @@ class UserProfilewViewController: UIViewController {
         self.loginLabel.text = user.login
         self.followerLabel.text = "follower: \(user.followers)"
         self.followingLabel.text = "following: \(user.following)"
-        self.thumbnail.image = nil
+        self.thumbnail.kf.setImage(with: user.avatarUrl)
     }
 
 }

@@ -112,6 +112,11 @@ extension UserProfilewViewController: UISearchBarDelegate {
             .receive(on: RunLoop.main)
             .sink { completion in
                 print("completion: \(completion)")
+                switch completion {
+                case .failure(let error):
+                    self.user = nil
+                case .finished: break
+                }
             } receiveValue: { user in
                 self.user = user
             }.store(in: &subscriptions)

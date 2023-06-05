@@ -18,6 +18,7 @@
 		8617FC6A2A2733D9003E2640 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617FC692A2733D9003E2640 /* NetworkService.swift */; };
 		8617FC6C2A273421003E2640 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617FC6B2A273421003E2640 /* Resource.swift */; };
 		8617FC6E2A27344E003E2640 /* Publisher+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617FC6D2A27344E003E2640 /* Publisher+Utils.swift */; };
+		865812022A2DB5D700EAD541 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865812012A2DB5D700EAD541 /* UserProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8617FC692A2733D9003E2640 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8617FC6B2A273421003E2640 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		8617FC6D2A27344E003E2640 /* Publisher+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Utils.swift"; sourceTree = "<group>"; };
+		865812012A2DB5D700EAD541 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +70,11 @@
 			children = (
 				8617FC4F2A270577003E2640 /* AppDelegate.swift */,
 				8617FC512A270577003E2640 /* SceneDelegate.swift */,
+				865812032A2DB75500EAD541 /* ViewModel */,
 				8617FC6F2A27347C003E2640 /* Network */,
 				8617FC702A273483003E2640 /* Utils */,
-				8617FC532A270577003E2640 /* UserProfilewViewController.swift */,
+				865812002A2DB5BE00EAD541 /* View */,
 				8617FC682A272B8E003E2640 /* Model */,
-				8617FC552A270577003E2640 /* Main.storyboard */,
 				8617FC582A270578003E2640 /* Assets.xcassets */,
 				8617FC5A2A270578003E2640 /* LaunchScreen.storyboard */,
 				8617FC5D2A270578003E2640 /* Info.plist */,
@@ -103,6 +105,23 @@
 				8617FC6D2A27344E003E2640 /* Publisher+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		865812002A2DB5BE00EAD541 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8617FC532A270577003E2640 /* UserProfilewViewController.swift */,
+				8617FC552A270577003E2640 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		865812032A2DB75500EAD541 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				865812012A2DB5D700EAD541 /* UserProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +203,7 @@
 			files = (
 				8617FC6A2A2733D9003E2640 /* NetworkService.swift in Sources */,
 				8617FC672A272B80003E2640 /* UserProfile.swift in Sources */,
+				865812022A2DB5D700EAD541 /* UserProfileViewModel.swift in Sources */,
 				8617FC542A270577003E2640 /* UserProfilewViewController.swift in Sources */,
 				8617FC6C2A273421003E2640 /* Resource.swift in Sources */,
 				8617FC6E2A27344E003E2640 /* Publisher+Utils.swift in Sources */,
